@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayil Comfort Clothing - பெண்களுக்கான தரமான ஆடைகள்</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef9f3 0%, #e8f5f3 100%);
+            color: #1a1a1a;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0a7ea4 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .call-btn {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(8, 129, 120, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🦚';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            background: #d4af37;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 30px 20px;
+        }
+
+        .stats-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0a7ea4;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #0a7ea4;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-header {
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .category-header.nightwear {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+
+        .category-header.casual {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+        }
+
+        .category-header.ethnic {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        }
+
+        .category-header.accessories {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .category-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .category-header p {
+            opacity: 0.95;
+            font-size: 0.95rem;
+        }
+
+        .category-items {
+            padding: 25px;
+        }
+
+        .category-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-item span {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .view-link {
+            color: #0a7ea4;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .category-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .category-btn.nightwear {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+
+        .category-btn.casual {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+        }
+
+        .category-btn.ethnic {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        }
+
+        .category-btn.accessories {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #d4af37;
+        }
+
+        .features-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .feature-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0a7ea4;
+            margin-bottom: 20px;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-card.phone {
+            background: linear-gradient(135deg, #e8f5f3 0%, #d4f1f4 100%);
+        }
+
+        .contact-card.email {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .contact-card.location {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+        }
+
+        .contact-info h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .contact-info a,
+        .contact-info p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a7ea4;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .social-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: linear-gradient(135deg, #0a7ea4 0%, #088178 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(8, 129, 120, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #d4af37 0%, #f0c674 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .stats-grid { grid-template-columns: 1fr; gap: 15px; }
+            .section-title h2 { font-size: 2rem; }
+            .category-grid { grid-template-columns: 1fr; }
+            .features h2 { font-size: 2rem; }
+            .contact h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">Mayil Comfort</div>
+            <a href="tel:+918807270909" class="call-btn">📞 அழைக்க</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>பாரம்பரியமும் நாகரீகமும்</h1>
+        <p>பெண்களின் கம்பீரத்தை வெளிப்படுத்தும் தரமான ஆடைகள்</p>
+        <a href="#categories" class="cta-button">இப்போதே வாங்குங்கள் ✨</a>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value">100%</div>
+                <div class="stat-label">தரம் உத்தரவாதம்</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🚚</div>
+                <div class="stat-value">இலவசம்</div>
+                <div class="stat-label">வீட்டு டெலிவரி</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">💯</div>
+                <div class="stat-value">500+</div>
+                <div class="stat-label">மகிழ்ச்சியான வாடிக்கையாளர்கள்</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-title">
+            <h2>எங்கள் தொகுப்புகள்</h2>
+            <p>உங்கள் பாணிக்கு ஏற்ற சிறந்த ஆடைகளை தேர்வு செய்யுங்கள்</p>
+        </div>
+
+        <div class="category-grid">
+            <!-- Night Wear -->
+            <div class="category-card">
+                <div class="category-header nightwear">
+                    <div class="category-icon">🌙</div>
+                    <h3>நைட்டிஸ்</h3>
+                    <p>வசதியான மற்றும் மென்மையான நைட் வேர்</p>
+                </div>
+                <div class="category-items">
+                    <div class="category-item">
+                        <span>காட்டன் நைட்டி</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>நைட் கவுன்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>ஹோசியரி நைட்டி</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <button class="category-btn nightwear">எல்லாவற்றையும் பார்க்க</button>
+                </div>
+            </div>
+
+            <!-- Casual Wear -->
+            <div class="category-card">
+                <div class="category-header casual">
+                    <div class="category-icon">👚</div>
+                    <h3>டாப்ஸ் & லெக்கின்ஸ்</h3>
+                    <p>நவீன பாணியில் வசதியான உடைகள்</p>
+                </div>
+                <div class="category-items">
+                    <div class="category-item">
+                        <span>டீஸ் & டாப்ஸ்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>லெக்கின்ஸ்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>ஜீன்ஸ் & பேன்ட்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <button class="category-btn casual">எல்லாவற்றையும் பார்க்க</button>
+                </div>
+            </div>
+
+            <!-- Ethnic Wear -->
+            <div class="category-card">
+                <div class="category-header ethnic">
+                    <div class="category-icon">👗</div>
+                    <h3>குர்தா & குர்தி</h3>
+                    <p>பாரம்பரிய மற்றும் நேர்த்தியான</p>
+                </div>
+                <div class="category-items">
+                    <div class="category-item">
+                        <span>குர்தி</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>அனார்க்கலி</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>பலாசோ செட்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <button class="category-btn ethnic">எல்லாவற்றையும் பார்க்க</button>
+                </div>
+            </div>
+
+            <!-- Accessories -->
+            <div class="category-card">
+                <div class="category-header accessories">
+                    <div class="category-icon">🧣</div>
+                    <h3>ஷால் & மேலும்</h3>
+                    <p>உங்கள் அழகை பூர்த்தி செய்யும்</p>
+                </div>
+                <div class="category-items">
+                    <div class="category-item">
+                        <span>ஷால்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>டுபாட்டா</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <div class="category-item">
+                        <span>ஸ்கார்ஃப்</span>
+                        <a href="#" class="view-link">பார்க்க →</a>
+                    </div>
+                    <button class="category-btn accessories">எல்லாவற்றையும் பார்க்க</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>ஏன் எங்களை தேர்வு செய்ய வேண்டும்?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <h3>உயர் தரம்</h3>
+                <p>சிறந்த துணிகளில் இருந்து தயாரிக்கப்பட்ட நீடித்த ஆடைகள்</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <h3>இலவச டெலிவரி</h3>
+                <p>₹1000க்கு மேல் வாங்கினால் இலவச வீட்டு டெலிவரி</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔄</div>
+                <h3>எளிய மாற்றம்</h3>
+                <p>7 நாட்களுக்குள் சிரமமில்லாமல் பொருட்களை மாற்றலாம்</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💎</div>
+                <h3>பல்வேறு வகைகள்</h3>
+                <p>நைட்டிஸ், லெக்கின்ஸ், குர்தா, டாப்ஸ் மற்றும் இன்னும் பல</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>தொடர்பு கொள்ள</h2>
+        <p class="contact-subtitle">நாங்கள் உங்களுக்கு உதவ தயாராக இருக்கிறோம்</p>
+
+        <div class="contact-grid">
+            <div class="contact-card phone">
+                <div class="contact-icon">📞</div>
+                <div class="contact-info">
+                    <h3>அழைக்க</h3>
+                    <a href="tel:+918807270909">+91 88072 70909</a>
+                </div>
+            </div>
+
+            <div class="contact-card email">
+                <div class="contact-icon">📧</div>
+                <div class="contact-info">
+                    <h3>மின்னஞ்சல்</h3>
+                    <a href="mailto:mayilcomfortclothing@gmail.com">mayilcomfortclothing@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card location">
+                <div class="contact-icon">📍</div>
+                <div class="contact-info">
+                    <h3>இடம்</h3>
+                    <p>ஈரோடு, தமிழ்நாடு</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <p>எங்களை பின்தொடருங்கள்</p>
+            <div class="social-buttons">
+                <a href="#" class="social-btn">📘 Facebook</a>
+                <a href="#" class="social-btn">📷 Instagram</a>
+                <a href="https://wa.me/918807270909" class="social-btn">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Mayil Comfort Clothing</h3>
+        <p>பெண்களுக்கு தேவையான அனைத்து வகை ஆடைகளும் - நைட்டிஸ், லெக்கின்ஸ், ஷால், குர்தி, டாப்ஸ் மற்றும் இன்னும் பல</p>
+        <p style="color: #d4af37; font-weight: 600; margin-top: 10px;">📍 ஈரோடு, தமிழ்நாடு | 📞 +91 88072 70909</p>
+        <div class="copyright">
+            <p>&copy; 2026 Mayil Comfort Clothing, Erode. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918807270909" class="whatsapp-float" target="_blank" rel="noopener">💬</a>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
